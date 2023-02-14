@@ -1,3 +1,0 @@
-from component_parameters import ComponentParameters
-
-print(ComponentParameters.smiles)
