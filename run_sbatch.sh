@@ -2,7 +2,7 @@
 #SBATCH -J swit_train
 #SBATCH -N 1
 #SBATCH -c 6
-#SBATCH -p your_card_name
+#SBATCH -p your_gpu_card_name
 #SBATCH --gres=gpu:1
 #SBATCH -o /your/path/of/log/pred_%j.log
 #SBATCH -e /your/path/of/log/pred_%j.err
@@ -15,4 +15,4 @@ cd /your/path/of/swit/
 ## 1. Please change to your own ckpt path
 ## 2. Please also change the test set to the data path you want to use
 ## 3. Please change the task name used during training
-python test_tss_model.py examples/task_test/lightning_logs/version_5434400/checkpoints/epoch=49-step=799.ckpt data/ampc_testset_demo.csv --task_name task_test --ncpu 6
+#python test_tss_model.py examples/task_test/lightning_logs/version_5434400/checkpoints/epoch=49-step=799.ckpt data/ampc_testset_demo.csv --task_name task_test --ncpu 6
