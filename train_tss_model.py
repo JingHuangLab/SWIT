@@ -93,6 +93,6 @@ if not args.testing_dataset_path is None:
         plt.plot(x, y,"b--")
         plt.xlabel("prediction",size=30)
         plt.ylabel("target",size=30)
-        plt.savefig("./"+args.task_name+"/preds/pred_target_scatter.png")
+        plt.savefig("./"+args.task_name+"/preds/pred_target_scatter"+suffix+".png")
     else:
         print("Warning: the length of the prediciton and target are not the same.")
