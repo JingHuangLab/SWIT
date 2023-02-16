@@ -51,7 +51,7 @@ If you have any questions, please contact Kaiyue Zhang (zhangkaiyue@westlake.edu
 ## Authors
 * Kaiyue Zhang (zhangkaiyue@westlake.edu.cn)
 * Wenyi Zhang (zhangwenyi@westlake.edu.cn)
-* JingHuang (huangjing@westlake.edu.cn)
+* Jing Huang (huangjing@westlake.edu.cn)
 
 ## Acknowledgments
 
