@@ -4,6 +4,7 @@ from numpy.lib.function_base import median
 import seaborn as sns
 from matplotlib.patches import Patch
 import os
+import pandas as pd
 
 ### Change the folder to the path where the script is located
 current_work_dir = os.getcwd()
