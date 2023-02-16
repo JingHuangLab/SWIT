@@ -18,7 +18,7 @@ suffix=str(current_time.year)+"_"+str(current_time.month)+"_"+str(current_time.d
 parser = argparse.ArgumentParser(description='Train a target-specific scoring model.')
 parser.add_argument('training_dataset_path', type=str, 
                     help='a path to a file in csv format. It could be absolute path or relative path. Example: ./data/ampc_round2_test1k.csv The first column should be SMILES and second column should be score.')
-parser.add_argument('task_name', type=str, default=None,
+parser.add_argument('task_name', type=str, default="task1",
                     help='the name of the output folder located under swit/')
 parser.add_argument('--testing_dataset_path', type=str, default=None,
                     help='a path to a file in csv format. It could be absolute path or relative path. Example: ./data/ampc_round2_test1k.csv The first column should be SMILES and second column should be score. default: None')
@@ -28,8 +28,8 @@ parser.add_argument('--epochs', type=int, default=50,
                     help='number of iterations for model training. default: 50')
 args = parser.parse_args()
 
-if not os.path.exists("./"+args.task_name+"/preds"):
-    cmd="mkdir -p ./"+args.task_name+"/preds"
+if not os.path.exists("./examples/"+args.task_name+"/preds"):
+    cmd="mkdir -p ./examples/"+args.task_name+"/preds"
     os.system(cmd)
 current_work_dir = os.getcwd()
 os.chdir(current_work_dir)
@@ -41,10 +41,10 @@ print(f"input data size:{len(xs)}")
 my_model= MPNN(ncpu=args.ncpu,epochs=args.epochs)
 my_model.train(xs, ys,args.task_name)
 #print(my_model)
-print("Trained model saved in /swit/"+args.task_name+"...")
-folder_name=sorted(os.listdir("./"+args.task_name+"/lightning_logs"))[-1]
-dump(my_model.scaler,f'./'+args.task_name+'/lightning_logs/'+folder_name+'/std_scaler.bin',compress=True)
-print("The scaler is already stored in {}".format('./'+args.task_name+'/lightning_logs/'+folder_name+'/std_scaler.bin'))
+print("Trained model saved in /swit/examples/"+args.task_name+"...")
+folder_name=sorted(os.listdir("./examples/"+args.task_name+"/lightning_logs"))[-1]
+dump(my_model.scaler,f'./examples/'+args.task_name+'/lightning_logs/'+folder_name+'/std_scaler.bin',compress=True)
+print("The scaler is already stored in {}".format('./examples/'+args.task_name+'/lightning_logs/'+folder_name+'/std_scaler.bin'))
 
 ### prediction
 if not args.testing_dataset_path is None:
@@ -55,6 +55,7 @@ if not args.testing_dataset_path is None:
     print(f"input data size:{len(xs)}")
     preds_chunks=my_model.predict(xs)
     pred_scores=[]
+    #print(preds_chunks)
     for idx in range(len(preds_chunks)):
         for pred_score in preds_chunks[idx]:
                 pred_scores.append(pred_score[0])
@@ -65,7 +66,7 @@ if not args.testing_dataset_path is None:
         se_lst = []
         new_pred=[]
         new_ys=[]
-        writer=open("./"+args.task_name+"/preds/prediction"+suffix+".csv","w")
+        writer=open("./examples/"+args.task_name+"/preds/prediction"+suffix+".csv","w")
         writer.write("prediction,target\n")
         for idx,target_score in enumerate(ys):
             if target_score>=0:  ## filter that should not be the items
@@ -93,6 +94,6 @@ if not args.testing_dataset_path is None:
         plt.plot(x, y,"b--")
         plt.xlabel("prediction",size=30)
         plt.ylabel("target",size=30)
-        plt.savefig("./"+args.task_name+"/preds/pred_target_scatter"+suffix+".png")
+        plt.savefig("./examples/"+args.task_name+"/preds/pred_target_scatter"+suffix+".png")
     else:
         print("Warning: the length of the prediciton and target are not the same.")
