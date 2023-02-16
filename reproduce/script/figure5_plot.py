@@ -87,8 +87,11 @@ for rdx,rcpt_name in enumerate(rcpt_name_lst):
     print(f"plot number:{len(group_simi)}")
     
     ### Plot
+    df=pd.DataFrame({"similarity":group_simi,"hue":label_lst})
     fig=FIG.add_subplot(sub_lst[rdx])
-    sns.violinplot(label_lst,group_simi,palette="Set2",linewidth=3)
+    sns.violinplot(data=df,x="hue",y="similarity",palette="Set2",linewidth=3)
+    fig.set_xlabel("")
+    fig.set_ylabel("")
     fig.set_xticks([])
     fig.set_title(stdname,size=90)
     fig.tick_params(labelsize=80)
