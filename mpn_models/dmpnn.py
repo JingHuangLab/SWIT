@@ -191,7 +191,7 @@ class MPNN:
         trainer = pl.Trainer(
             max_epochs=self.epochs, callbacks=[early_stop_callback],
             gpus=1 if self.use_gpu else 0, precision=self.precision,log_every_n_steps=20,
-            progress_bar_refresh_rate=100,default_root_dir='./'+jobname)
+            progress_bar_refresh_rate=100,default_root_dir='./examples/'+jobname)
         trainer.fit(model, train_dataloader, val_dataloader)
         
         return True
