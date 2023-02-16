@@ -133,6 +133,6 @@ FIG.text(0.315,0.475,rcpt_order[4],size=135,ha="center")
 FIG.text(0.715,0.475,rcpt_order[5],size=135,ha="center")
 FIG.text(0.315,0.265,rcpt_order[6],size=135,ha="center")
 FIG.text(0.715,0.265,rcpt_order[7],size=135,ha="center")
-plt.savefig("../result_graphs/figure3_vina_score_ef.png",dpi=300)
+plt.savefig("../result_graphs/figure3_vina_score_ef.png")
 
 
