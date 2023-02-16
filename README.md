@@ -46,7 +46,7 @@ SWIT program independently trains the target-specific scoring model, and you can
 3. After running, you can go to the corresponding path to view the molecular generation results. For example, `./examples/task_test/RL_practice/test1/results/scaffold_memory.csv`
           
 ## Help
-If you have any questions, please contact with Kaiyue Zhang (zhangkaiyue@westlake.edu.cn)
+If you have any questions, please contact Kaiyue Zhang (zhangkaiyue@westlake.edu.cn)
 
 ## Authors
 * Kaiyue Zhang (zhangkaiyue@westlake.edu.cn)
@@ -56,5 +56,6 @@ If you have any questions, please contact with Kaiyue Zhang (zhangkaiyue@westlak
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
+* [chemprop](https://github.com/chemprop/chemprop)
 * [MolPAL](https://github.com/coleygroup/molpal)
 * [REINVENT](https://github.com/MolecularAI/Reinvent)
