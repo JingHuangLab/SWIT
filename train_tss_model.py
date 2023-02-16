@@ -55,7 +55,6 @@ if not args.testing_dataset_path is None:
     print(f"input data size:{len(xs)}")
     preds_chunks=my_model.predict(xs)
     pred_scores=[]
-    print(preds_chunks)
     for idx in range(len(preds_chunks)):
         for pred_score in preds_chunks[idx]:
                 pred_scores.append(pred_score[0])
