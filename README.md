@@ -28,9 +28,9 @@ SWIT program independently trains the target-specific scoring model, and you can
   
     * `data/ampc_trainset_demo.csv` is the path of the training data. The first column of the data is the SMILES of the molecule, and the second column is the docking score, separated by commas and must contain column names.
     * `task_test` is the task name, you can set it to any name you like.
-    * `--testing_dataset_path data/ampc_testset_demo.csv`  is the path of the testing data. (default = None) It uses the trained model to predict the test set you provide, and outputs the prediction and scatter plot in [`examples/task_test/preds/`](examples/task_test/preds/)
-    * `--ncpu 6` is the number of cores available to this job. (default = 1)
-    * `--epochs` is the number of epochs for model training. (default = 50)
+    * `--testing_dataset_path data/ampc_testset_demo.csv` (optional) is the path of the testing data. (default = None) It uses the trained model to predict the test set you provide, and outputs the prediction and scatter plot in [`examples/task_test/preds/`](examples/task_test/preds/)
+    * `--ncpu 6` (optional) is the number of cores available to this job. (default = 1)
+    * `--epochs` (optional) is the number of epochs for model training. (default = 50)
   
 2. The above model is embedded in the molecular generative model for guiding the generation of molecules that bind well to the target protein. 
    - Open `create_rl_config.py` and set parameters. For example, the file path, the same task name as the first step, and the number of iterations.
