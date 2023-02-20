@@ -21,7 +21,7 @@ Source code, and data to reproduce results, for the manuscript
         conda activate swit
 
 ## Usage
-SWIT program independently trains the target-specific scoring model, and you can only perform the first step as needed. To reproduce the method shown in mentioned manuscript, please complete these two steps. The following command uses a subset of the AmpC target data as an example.
+SWIT program independently trains the target-specific scoring model, and you can only perform the first step as needed. To reproduce the method shown in mentioned manuscript, please complete these two steps. The following commands use a subset of the AmpC target data as an example.
 1. Train a target-specific scoring model. It outputs a score that can approximate the docking score of a given molecule for a specific target protein.
   
         python train_tss_model.py data/ampc_trainset_demo.csv task_test --testing_dataset_path data/ampc_testset_demo.csv --ncpu 6
