@@ -35,7 +35,8 @@ class CDockScore(BaseScoreComponent):
             smi = Chem.MolToSmiles(m)
             smi_lst.append(smi) 
         #try:    
-        score_pre = self.predict(self.activity_model, smi_lst, scaler=self.scaler,batch_size=len(smi_lst)) 
+        score_pre = self.predict(self.activity_model, smi_lst, scaler=self.scaler,batch_size=len(smi_lst))
+        score_pre=[sp*-1 for sp in score_pre]
         score = self._transformation_function(score_pre, self.parameters.specific_parameters)
         # except:
         #     score=[0 for i in range(len(smi_lst))]
