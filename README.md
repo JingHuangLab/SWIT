@@ -1,7 +1,7 @@
 # SWIT
 Source code, and data to reproduce results, for the manuscript
 
-"A Simple Way to Incorporate Target Structural Information in Molecular Generative Models" by Wenyi Zhang, Kaiyue Zhang and Jing Huang.
+["A Simple Way to Incorporate Target Structural Information in Molecular Generative Models"](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00293) by Wenyi Zhang, Kaiyue Zhang and Jing Huang.
 
 ## Requirements
 * Install [Conda](https://conda.io/projects/conda/en/latest/index.html)
