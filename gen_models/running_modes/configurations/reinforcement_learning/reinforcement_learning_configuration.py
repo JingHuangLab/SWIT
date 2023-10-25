@@ -12,4 +12,4 @@ class ReinforcementLearningConfiguration:
     reset: int = 0
     reset_score_cutoff: float = 0.5
     margin_threshold: int = 50
-    n_mols : int=10000
+    n_mols : int=10000000
