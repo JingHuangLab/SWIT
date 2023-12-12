@@ -1,10 +1,8 @@
 name: swit
 channels:
-  - pytorch
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge
-  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free
-  - conda-forge
-  - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=1_llvm
