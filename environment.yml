@@ -3,10 +3,6 @@ channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge
-  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/conda-forge/
-  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/
-  - https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/
-  - defaults
 dependencies:
   - _libgcc_mutex=0.1
   - blas=1.0
