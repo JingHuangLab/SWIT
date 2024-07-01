@@ -15,6 +15,7 @@ nstep = 10
 n_mols= 800000  #When the set number of steps is not enough to generate the set number of molecules, this parameter has no effect.
 low_mw = 200
 high_mw = 650
+upper_score=30
 
 
 # --------- do not change
@@ -119,7 +120,7 @@ scoring_function = {
         "smiles": [],                          # list of SMILES (not required for this component)
         "specific_parameters": {
             "transformation_type": "sigmoid",  # see description above
-            "high": 30,                        # parameter for sigmoid transformation
+            "high": upper_score,                        # parameter for sigmoid transformation
             "low": 0,                          # parameter for sigmoid transformation
             "k": 0.2,                          # parameter for sigmoid transformation
             "scikit": "regression",            # model can be "regression" or "classification"
